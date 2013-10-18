@@ -58,7 +58,7 @@ var ListCtrl = function ($scope, $location, Todo) {
         $scope.items = [];
         $scope.more = true;
         $scope.search();
-    };
+    }; 
 
     $scope.delete = function () {
         var id = this.item.TodoItemId;
