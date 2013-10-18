@@ -21,8 +21,8 @@ namespace AngularTutorial.Migrations
             var items = Enumerable.Range(1, 50).Select(o => new TodoItem
             {
                 TodoItemId = counter++,
-                DueDate = new DateTime(2012, r.Next(1, 12), r.Next(1, 28)),
-                Priority = (byte)r.Next(10),
+                DueDate = new DateTime(2013, r.Next(1, 12), r.Next(1, 28)),
+                Priority = (byte)r.Next(10), 
                 Todo = o.ToString()
             }).ToArray();
             context.TodoItems.AddOrUpdate(item => new { item.Todo }, items);
