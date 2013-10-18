@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularTutorial", "AngularTutorial.csproj", "{888D80A9-569A-49A8-8BE3-F5F5D8ACDBFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularTutorial.Tests", "AngularTutorial.Tests.csproj", "{92A30788-824D-4300-B026-76F9E86C4D51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{888D80A9-569A-49A8-8BE3-F5F5D8ACDBFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{888D80A9-569A-49A8-8BE3-F5F5D8ACDBFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{888D80A9-569A-49A8-8BE3-F5F5D8ACDBFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{888D80A9-569A-49A8-8BE3-F5F5D8ACDBFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92A30788-824D-4300-B026-76F9E86C4D51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92A30788-824D-4300-B026-76F9E86C4D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92A30788-824D-4300-B026-76F9E86C4D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92A30788-824D-4300-B026-76F9E86C4D51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
