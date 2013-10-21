@@ -15,6 +15,7 @@ namespace AngularTutorial
 
     public class WebApiApplication : global::System.Web.HttpApplication
     {
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();

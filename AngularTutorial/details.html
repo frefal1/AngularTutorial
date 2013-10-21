@@ -1,9 +1,15 @@
 ﻿<h2>{{action}} Todo</h2>
 <form name="form" class="form-horizontal">
     <div class="control-group" data-ng-class="{error: form.Todo.$invalid}">
-        <label class="control-label" for="Todo">Todo</label>
+        <label class="control-label" for="Todo">Title</label>
         <div class="controls">
-            <input type="text" data-ng-model="item.Todo" id="Todo" name="Todo" placeholder="">
+            <input type="text" data-ng-model="item.Todo" id="Title" name="Title" placeholder="" />
+        </div>
+    </div>
+    <div class="control-group" data-ng-class="{error: form.TodoText.$invalid}">
+        <label class="control-label" for="Todo">Task</label>
+        <div class="controls">
+            <textarea data-ng-model="item.TodoText" id="Todo" name="Todo" placeholder="" rows="5" cols="50" />
         </div>
     </div>
     <div class="control-group" data-ng-class="{error: form.DueDate.$invalid}">
@@ -12,16 +18,21 @@
             <input type="text" data-ng-model="item.DueDate" id="DueDate" name="DueDate" placeholder="">
         </div>
     </div>
-    <div class="control-group" data-ng-class="{error: form.Priority.$inavalid }">     
-    <label class="control-label" for="Priority">Priority</label>
-    <div class="controls">
-        <input type="number" data-ng-model="item.Priority" id="Priority" name="Priority" placeholder="">
+    <div class="control-group" data-ng-class="{error: form.Priority.$inavalid }">
+        <label class="control-label" for="Priority">Priority</label>
+        <div class="controls">
+            <input type="number" data-ng-model="item.Priority" id="Priority" name="Priority" placeholder="">
+        </div>
     </div>
-</div>
-<div class="form-actions">
-    <button class="btn btn-primary" data-ng-click="save()">
-        {{action}}
-    </button>
-    <a href="#/" class="btn">Cancel</a>
-</div>
+    <div class="form-actions">
+        <button class="btn btn-primary" data-ng-click="save()">
+            {{action}}
+        </button>
+        <a href="#/" class="btn">Cancel</a>
+    </div>
 </form>
+<script type="text/javascript">
+    $document.ready(function () {
+        $filter('#DueDate')(date[, mediumDate]);
+    });
+</script>
