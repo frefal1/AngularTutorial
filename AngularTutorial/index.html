@@ -1,17 +1,22 @@
 ﻿<!DOCTYPE html>
 <html data-ng-app="TodoApp" xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <script src="Scripts/jquery-1.9.1.js"></script>
-        <script src="Scripts/angular.js"></script>
-        <script src="Scripts/angular-resource.js"></script>
-        <script src="Scripts/app/app.js"></script>
-        <link rel="stylesheet" type="text/css" href="Content/bootstrap/bootstrap.css" />
-        <title>The Todo App to end all other (lesser) Todo Apps</title>
-    </head>
-    <body>
-        <div class="container">
-            <div data-ng-view></div>
+<head>
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/app/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="Content/bootstrap/bootstrap.css" />
+    <title>The Todo App to end all other (lesser) Todo Apps</title>
+</head>
+<body style="background: none repeat scroll 0 0 #D1D0CA;">
+    <div class="header" style="margin: 15px 15px 15px 30px; padding: 30px 0 55px">
+        <div class="inner" style="height: 78px; margin: 0 auto; overflow: hidden; position: relative; width: 1040px; z-index: 10; border-bottom:5px solid coral;">
+            <h1>The Todo list</h1>
         </div>
+    </div>
+    <div class="container">
+        <div data-ng-view></div>
+    </div>
 
-    </body>
+</body>
 </html>
