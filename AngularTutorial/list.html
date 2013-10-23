@@ -18,7 +18,7 @@
         <th><a data-ng_click="sort('DueDate')">Due</a></th>
         <span class="glyphicon" data-ng_show="sort_order == 'DueDate' && is_desc == true"><i class="glyphicon-arrow-down"></i></span>
         <span class="glyphicon" data-ng-show="sort_order == 'DueDate' && is_desc == false"><i class="glyphicon-arrow-up"></i></span>
-        
+
         <th><a href="#/new">
             <p style="font-weight: bold">Add+</p>
         </a></th>
@@ -37,6 +37,12 @@
             </a></td>
         </tr>
     </tbody>
+
     <span data-ng-show="has_more()"><a data-ng-click="show_more()">Show More</a></span>
 
 </table>
+<div >
+    <ul class="playlists" data-ng-repeat="item in items" style="display: none">
+        <li>{{item.TodoText}}</li>
+    </ul>
+</div>

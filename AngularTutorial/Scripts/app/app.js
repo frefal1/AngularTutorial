@@ -1,11 +1,23 @@
-﻿var TodoApp = angular.module("TodoApp", ["ngResource"]).
-    config(function ($routeProvider) {
+﻿var TodoApp = angular.module("TodoApp", ["ngResource"])
+    .config(function ($routeProvider) {
         $routeProvider.
-            when('/', { controller: ListCtrl, templateUrl: 'list.html' }).            
+            when('/', { controller: ListCtrl, templateUrl: 'list.html' }).
             when('/new', { controller: CreateCtrl, templateUrl: 'details.html' }).
             when('/edit/:editId', { controller: EditCtrl, templateUrl: 'details.html' }).
             otherwise({ redirectTo: '/' });
 
+    })
+    .directive('helloWorld', function () {
+        //console.log(scope);
+        return {
+            restrict: 'E',
+            scope: {
+                name: '@'
+            },
+            templateUrl: 'hello.html',
+
+        };
+        
     });
 
 TodoApp.factory('Todo', function ($resource) {
@@ -14,6 +26,7 @@ TodoApp.factory('Todo', function ($resource) {
 
 
 var ListCtrl = function ($scope, $location, Todo) {
+
 
     $scope.search = function () {
         Todo.query({
@@ -48,7 +61,7 @@ var ListCtrl = function ($scope, $location, Todo) {
     $scope.has_more = function () {
         return $scope.more;
     };
-    
+
     $scope.sort_order = "Priority";
     $scope.is_desc = false;
 
@@ -58,14 +71,14 @@ var ListCtrl = function ($scope, $location, Todo) {
         $scope.items = [];
         $scope.more = true;
         $scope.search();
-    }; 
+    };
 
     $scope.delete = function () {
         var id = this.item.TodoItemId;
         Todo.delete({ id: id });
         $("#itemId_" + id).fadeOut();
     };
-   // console.log($scope.more);
+    // console.log($scope.more);
     $scope.reset();
 
 };
@@ -84,9 +97,9 @@ var EditCtrl = function ($scope, $location, $routeParams, Todo) {
     $scope.action = "Update";
     var id = $routeParams.editId;
     $scope.item = Todo.get({ id: id });
-    
+
     $scope.save = function () {
-        Todo.update({id:id}, $scope.item, function(){
+        Todo.update({ id: id }, $scope.item, function () {
             $location.path('/');
         });
     };

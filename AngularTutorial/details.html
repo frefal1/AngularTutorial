@@ -15,7 +15,8 @@
     <div class="control-group" data-ng-class="{error: form.DueDate.$invalid}">
         <label class="control-label" for="DueDate">DueDate</label>
         <div class="controls">
-            <input type="text" data-ng-model="item.DueDate" id="DueDate" name="DueDate" placeholder="">
+            <!--            <input type="text" data-ng-model="item.DueDate" id="DueDate" name="DueDate" placeholder="">-->
+             <input id="inputDatepicker" class="input-small" type="text" data-ng-model="datepicker.date" data-date-format="dd/mm/yyyy" bs-datepicker>
         </div>
     </div>
     <div class="control-group" data-ng-class="{error: form.Priority.$inavalid }">
