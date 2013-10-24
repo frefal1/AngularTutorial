@@ -22,6 +22,34 @@
 
         <hello-world name="Fredrik"></hello-world>
 
-    <div demo-greet></div>
+    <div>
+        <button onclick="TestService()">Test Service</button>
+        <button onclick="TestInternalService()">Test Service 2</button>
+    </div>
+    <script type="text/javascript">
+        
+        function TestService() {
+            return $.ajax({
+                url: 'http://angulartodo-3.apphb.com/swecompServices.asmx/HelloWorld',
+                contentType: 'application/json',
+                dataType: 'json',
+                type: 'post',
+                success: function (data) { console.log(data.d); },
+                error: function(data){console.log("Error "+ data.d);}
+            });
+
+        }
+        function TestInternalService() {
+            return $.ajax({
+                url: 'swecompServices.asmx/HelloWorld',
+                contentType: 'application/json',
+                dataType: 'json',
+                type: 'post',
+                success: function (data) { console.log(data.d); },
+                error: function (data) { console.log("Error " + data.d); }
+            });
+
+        }
+    </script>
 </body>
 </html>
