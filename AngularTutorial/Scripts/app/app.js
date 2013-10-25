@@ -60,8 +60,8 @@ var ListCtrl = function ($scope, $location, Todo) {
         return $scope.more;
     };
 
-    $scope.sort_order = "Priority";
-    $scope.is_desc = false;
+    $scope.sort_order = "Added";
+    $scope.is_desc = true;
 
     $scope.reset = function () {
         $scope.limit = 20;
@@ -103,8 +103,9 @@ var EditCtrl = function ($scope, $location, $routeParams, Todo) {
     $scope.action = $scope.actiontype = "Update";
     var id = $routeParams.editId;
     $scope.item = Todo.get({ id: id });
-
-    $scope.save = function () { 
+    var today = GetDate();
+    $scope.save = function () {
+        $scope.item.Added = today;
         Todo.update({ id: id }, $scope.item, function () {
             $location.path('/');
         });
