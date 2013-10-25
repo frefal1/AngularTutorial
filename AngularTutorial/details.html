@@ -1,4 +1,4 @@
-﻿<h2>{{action}} Todo</h2>
+﻿<h2>{{action}} List Item</h2>
 <form name="form" class="form-horizontal">
     <div class="control-group" data-ng-class="{error: form.Todo.$invalid}">
         <label class="control-label" for="Todo">Title</label>
@@ -15,8 +15,8 @@
     <div class="control-group" data-ng-class="{error: form.DueDate.$invalid}">
         <label class="control-label" for="DueDate">DueDate</label>
         <div class="controls">
-            <!--            <input type="text" data-ng-model="item.DueDate" id="DueDate" name="DueDate" placeholder="">-->
-             <input id="inputDatepicker" class="input-small" type="text" data-ng-model="datepicker.date" data-date-format="dd/mm/yyyy" bs-datepicker>
+                        <input type="text" data-ng-model="item.DueDate" id="DueDate" name="DueDate" placeholder="">
+<!--            <input id="inputDatepicker" class="input-small" type="text" data-ng-model="datepicker.date" data-date-format="dd/mm/yyyy" bs-datepicker>-->
         </div>
     </div>
     <div class="control-group" data-ng-class="{error: form.Priority.$inavalid }">
@@ -25,9 +25,12 @@
             <input type="number" data-ng-model="item.Priority" id="Priority" name="Priority" placeholder="">
         </div>
     </div>
+    <div style="display: none">
+        <input type="text" data-ng-model="item.Added" id="Added" name="Added"/>
+    </div>
     <div class="form-actions">
         <button class="btn btn-primary" data-ng-click="save()">
-            {{action}}
+            {{actiontype}}
         </button>
         <a href="#/" class="btn">Cancel</a>
     </div>

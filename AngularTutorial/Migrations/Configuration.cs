@@ -22,7 +22,7 @@ namespace AngularTutorial.Migrations
             {
                 TodoItemId = o,
                 DueDate = new DateTime(2013, r.Next(1, 12), r.Next(1, 28)),
-                Priority = (byte)r.Next(10), 
+                Priority = (byte)r.Next(10),
                 Todo = o.ToString(),
                 Added = DateTime.Today
             }).ToArray();

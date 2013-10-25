@@ -17,11 +17,26 @@ namespace AngularTutorial
     [System.Web.Script.Services.ScriptService]
     public class swecompServices : System.Web.Services.WebService
     {
-
+        
+   
         [WebMethod]
         public string HelloWorld()
         {
             return "Hello World Hell yes!!";
         }
+
+        [WebMethod]
+        public object GetAllItems()
+        {
+            var helper = new Helpers.ListHelper();
+            return helper.GetAllItems().ToList();
+        }
+
+        //[WebMethod]
+        //public object GetLatest()
+        //{
+        //    var helper = new Helpers.ListHelper();
+        //    return helper.GetRecentlyAdded().ToList();
+        //}
     }
 }

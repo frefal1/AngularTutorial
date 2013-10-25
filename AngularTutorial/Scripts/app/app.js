@@ -15,9 +15,7 @@
                 name: '@'
             },
             templateUrl: 'hello.html',
-
         };
-        
     });
 
 TodoApp.factory('Todo', function ($resource) {
@@ -84,21 +82,29 @@ var ListCtrl = function ($scope, $location, Todo) {
 };
 
 var CreateCtrl = function ($scope, $location, Todo) {
-    $scope.action = "Edit";
+    $scope.action = "Add";
+    $scope.actiontype = "Create";
+    var today = GetDate();
     $scope.save = function () {
+        $scope.item.Added = today;
         Todo.save($scope.item, function () {
             $location.path('/');
+            console.log($('#Added'));
         });
     };
 
 };
 
+function GetDate() {
+    return new Date();
+}
+
 var EditCtrl = function ($scope, $location, $routeParams, Todo) {
-    $scope.action = "Update";
+    $scope.action = $scope.actiontype = "Update";
     var id = $routeParams.editId;
     $scope.item = Todo.get({ id: id });
 
-    $scope.save = function () {
+    $scope.save = function () { 
         Todo.update({ id: id }, $scope.item, function () {
             $location.path('/');
         });
