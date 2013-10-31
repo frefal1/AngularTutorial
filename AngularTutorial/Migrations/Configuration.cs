@@ -11,7 +11,7 @@ namespace AngularTutorial.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(AngularTutorial.Models.AngularTutorialContext context)
