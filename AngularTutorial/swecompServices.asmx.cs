@@ -29,7 +29,7 @@ namespace AngularTutorial
         public object GetAllItems()
         {
             var helper = new Helpers.ListHelper();
-            return helper.GetAllItems().ToList();
+            return helper.GetAllItems().ToList().OrderByDescending(x => x.Added);
         }
 
         //[WebMethod]
