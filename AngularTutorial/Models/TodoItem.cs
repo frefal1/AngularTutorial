@@ -8,14 +8,13 @@ namespace AngularTutorial.Models
 {
     public class TodoItem
     {
-        private DateTime? _time;
-
         public int TodoItemId { get; set; }
         [MaxLength(800)]
         public String Todo { get; set; }
         public String TodoText { get; set; }
+        public String BioText { get; set; }
         public byte Priority { get; set; }
         public DateTime? DueDate { get; set; }
-        public DateTime? Added { get { return _time; } set { _time = value; } }
+        public DateTime? Added { get; set; }
     }
 }

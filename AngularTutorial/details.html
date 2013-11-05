@@ -1,25 +1,31 @@
 ﻿<h2>{{action}} List Item</h2>
 <form name="form" class="form-horizontal">
     <div class="control-group" data-ng-class="{error: form.Todo.$invalid}">
-        <label class="control-label" for="Todo">Title</label>
+        <label class="control-label" for="Todo">Composer Name</label>
         <div class="controls">
             <input type="text" data-ng-model="item.Todo" id="Title" name="Title" placeholder="" />
         </div>
     </div>
     <div class="control-group" data-ng-class="{error: form.TodoText.$invalid}">
-        <label class="control-label" for="Todo">Task</label>
+        <label class="control-label" for="Todo">Playlist URI</label>
         <div class="controls">
-            <textarea data-ng-model="item.TodoText" id="Todo" name="Todo" placeholder="" rows="5" cols="50" />
+            <textarea data-ng-model="item.TodoText" id="Todo" name="Todo" placeholder="" rows="2" cols="50" />
         </div>
     </div>
-    <div class="control-group" data-ng-class="{error: form.DueDate.$invalid}">
+    <div class="control-group" data-ng-class="{error: form.BioText.$invalid}">
+        <label class="control-label" for="BioText">Biography</label>
+        <div class="controls">
+            <textarea data-ng-model="item.BioText" id="BioText" name="BioText" placeholder="" rows="7" cols="80" />
+        </div>
+    </div>
+    <div class="control-group" data-ng-class="{error: form.DueDate.$invalid}" style="display: none">
         <label class="control-label" for="DueDate">DueDate</label>
         <div class="controls">
-                        <input type="text" data-ng-model="item.DueDate" id="DueDate" name="DueDate" placeholder="">
-<!--            <input id="inputDatepicker" class="input-small" type="text" data-ng-model="datepicker.date" data-date-format="dd/mm/yyyy" bs-datepicker>-->
+            <input type="text" data-ng-model="item.DueDate" id="DueDate" name="DueDate" placeholder="">
+            <!--            <input id="inputDatepicker" class="input-small" type="text" data-ng-model="datepicker.date" data-date-format="dd/mm/yyyy" bs-datepicker>-->
         </div>
     </div>
-    <div class="control-group" data-ng-class="{error: form.Priority.$inavalid }">
+    <div class="control-group" data-ng-class="{error: form.Priority.$inavalid }" style="display: none">
         <label class="control-label" for="Priority">Priority</label>
         <div class="controls">
             <input type="number" data-ng-model="item.Priority" id="Priority" name="Priority" placeholder="">
@@ -28,7 +34,7 @@
     <div style="display: none">
         <input type="text" data-ng-model="item.Added" id="Added" name="Added"/>
     </div>
-    <div class="form-actions">
+    <div class="form-actions" style="margin-top: 10px;">
         <button class="btn btn-primary" data-ng-click="save()">
             {{actiontype}}
         </button>

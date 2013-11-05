@@ -30,10 +30,5 @@ namespace AngularTutorial.Helpers
             }
         }
 
-        //public List<TodoItem> GetRecentlyAdded()
-        //{
-        //  //  return GetAllItems().OrderByDescending(x => x.Added).Take(5);
-        //}
-
     }
 }
