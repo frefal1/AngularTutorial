@@ -214,6 +214,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="hello.html" />
+    <Content Include="Images\ContosoLogo.jpg" />
     <Content Include="index.html" />
     <Content Include="list.html" />
     <Content Include="login.aspx" />
