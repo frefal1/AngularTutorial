@@ -1,22 +1,22 @@
 ﻿var TodoApp = angular.module("TodoApp", ["ngResource"])
-    .config(function ($routeProvider) {
+    .config(function($routeProvider) {
         $routeProvider.
             when('/', { controller: ListCtrl, templateUrl: 'list.html' }).
             when('/new', { controller: CreateCtrl, templateUrl: 'details.html' }).
             when('/edit/:editId', { controller: EditCtrl, templateUrl: 'details.html' }).
             otherwise({ redirectTo: '/' });
 
-    })
-    .directive('helloWorld', function () {
-        //console.log(scope);
-        return {
-            restrict: 'E',
-            scope: {
-                name: '@'
-            },
-            templateUrl: 'hello.html',
-        };
     });
+    //.directive('helloWorld', function () {
+    //    //console.log(scope);
+    //    return {
+    //        restrict: 'E',
+    //        scope: {
+    //            name: '@'
+    //        },
+    //        templateUrl: 'hello.html'
+    //    };
+    //});
 
 TodoApp.factory('Todo', function ($resource) {
     return $resource('/api/todo/:id', { id: '@id' }, { update: { method: 'PUT' } });
@@ -24,8 +24,6 @@ TodoApp.factory('Todo', function ($resource) {
 
 
 var ListCtrl = function ($scope, $location, Todo) {
-
-
     $scope.search = function () {
         Todo.query({
             q: $scope.query,
