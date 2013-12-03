@@ -30,5 +30,10 @@ namespace AngularTutorial.Helpers
             }
         }
 
+        public List<TodoItem> GetLatestItems()
+        {
+            var list = GetAllItems();
+            return list.OrderByDescending(x => x.Added).Take(4).ToList();
+        }
     }
 }

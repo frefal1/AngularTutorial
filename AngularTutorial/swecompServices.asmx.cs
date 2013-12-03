@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using AngularTutorial.Models;
 
 
 namespace AngularTutorial
@@ -36,7 +37,8 @@ namespace AngularTutorial
         public object GetLatest()
         {
             var helper = new Helpers.ListHelper();
-            return helper.GetAllItems().ToList().OrderByDescending(x => x.Added).Take(4);
+            var items =  helper.GetLatestItems();
+            return items;
         }
     }
 }
